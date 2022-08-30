@@ -1,0 +1,8 @@
+SELECT * FROM advisor;
+INSERT INTO advisor VALUES('17685', '10034');
+SELECT * FROM advisor;
+
+SELECT * FROM prereq;
+INSERT INTO prereq VALUES('BT-605', 'CS-101');
+INSERT INTO prereq VALUES('BT-605', 'BIO-101');
+SELECT * FROM prereq;
