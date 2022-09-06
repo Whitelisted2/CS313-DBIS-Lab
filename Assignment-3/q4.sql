@@ -1,4 +1,3 @@
--- Q4) Insertion Script
 INSERT INTO part VALUES (30034, "Unknown Chip", "red", 3.56);
 INSERT INTO part VALUES (30134, "Breadboard", "white", 50.4);
 INSERT INTO part VALUES (12154, "Processed Graphite", "black", 2.1);
