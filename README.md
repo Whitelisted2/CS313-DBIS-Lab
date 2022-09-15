@@ -3,3 +3,6 @@ This repository contains files related to Databases and Information Systems Lab 
 
 ## Assignments Included
 1. DBMS Basics + mySQL Setup
+2. DML, DQL and Integrity Constraints
+3. DDL, DCL and Using ```.sql``` files
+4. MySQL querying in phpMyAdmin
