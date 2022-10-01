@@ -6,5 +6,6 @@ This repository contains files related to Databases and Information Systems Lab 
 2. DML, DQL and Integrity Constraints
 3. DDL, DCL and Using ```.sql``` files
 4. MySQL querying in phpMyAdmin
+5. Java+JDBC and J2EE for Web Apps
 
 > Appear weak when you are strong, and strong when you are weak. &mdash; Sun Tzu, The Art of War
