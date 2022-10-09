@@ -1,0 +1,4 @@
+    book (book_id, title, category, author);
+    student (student_id, name, dept_name, year, semester);
+    issue (student_id, book_id, issue_date, return_date);
+    
