@@ -40,15 +40,15 @@
                 	<form action="AddServlet" method="POST">
                     	<div class="group">
                         	<label for="book_id" class="label">BOOK ID</label>
-                        	<input id="book_id" name="book_id" type="number" class="input" onKeyPress="if(this.value.length==6) return false;">
+                        	<input id="book_id" name="book_id" type="number" class="input" onKeyPress="if(this.value.length==6) return false;" required>
                     	</div>
                    		<div class="group">
                         	<label for="title" class="label">TITLE</label>
-                        	<input id="title" name="title" type="text" class="input" onKeyPress="if(this.value.length==50) return false;">
+                        	<input id="title" name="title" type="text" class="input" onKeyPress="if(this.value.length==50) return false;" required>
                     	</div>
                     	<div class="group">
                         	<label for="category" class="label">CATEGORY</label>
-                        	<input id="category" name="category" type="text" class="input" list="categories" onKeyPress="if(this.value.length==20) return false;">
+                        	<input id="category" name="category" type="text" class="input" list="categories" onKeyPress="if(this.value.length==20) return false;" required>
 							<datalist id="categories">
 							  <option>Adventure</option>
 							  <option>Children's</option>
@@ -70,7 +70,7 @@
                     	</div>
                     	<div class="group">
                         	<label for="author" class="label">AUTHOR</label>
-                        	<input id="author" name="author" type="text" class="input" onKeyPress="if(this.value.length==50) return false;">
+                        	<input id="author" name="author" type="text" class="input" onKeyPress="if(this.value.length==50) return false;" required>
                     	</div>
                     	<div class="group">
                         	<input type="submit" class="button" value="ADD NOW!">

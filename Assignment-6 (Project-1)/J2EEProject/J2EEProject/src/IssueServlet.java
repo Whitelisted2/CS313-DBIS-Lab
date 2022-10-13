@@ -32,9 +32,9 @@ public class IssueServlet extends HttpServlet {
 		String idate = request.getParameter("issue_date");
 		java.util.Date i_date = new SimpleDateFormat("yyyy-MM-dd").parse(idate);
 		java.sql.Date issue_date = new java.sql.Date(i_date.getTime());
-		String rdate = request.getParameter("return_date");
-		java.util.Date r_date = new SimpleDateFormat("yyyy-MM-dd").parse(rdate);
-		java.sql.Date return_date = new java.sql.Date(r_date.getTime());
+//		String rdate = request.getParameter("return_date");
+//		java.util.Date r_date = new SimpleDateFormat("yyyy-MM-dd").parse(rdate);
+//		java.sql.Date return_date = new java.sql.Date(r_date.getTime());
 
 		Connection con = null;
  		String url = "jdbc:mysql://localhost:3306/library"; //MySQL URL and followed by the database name
@@ -56,16 +56,21 @@ public class IssueServlet extends HttpServlet {
 //		System.out.println(student_id);
 //		System.out.println(rset.getInt("C"));
 		if (rset.getInt("C") == 1 && rset2.getInt("C2") == 1) {  				// student exists
-			PreparedStatement st = con.prepareStatement("INSERT INTO issue VALUES (?, ?, ?, ?);");
+			PreparedStatement st = con.prepareStatement("INSERT INTO issue VALUES (?, ?, ?, null);");
 	 		st.setString(1,student_id);
 			st.setString(2,book_id);
 			st.setDate(3,issue_date);
-			st.setDate(4,return_date);
 			int result=st.executeUpdate();
+			st.close();
 
 			if(result>0){
-				RequestDispatcher rd = request.getRequestDispatcher("IssueResult.jsp");
+			    PreparedStatement upd = con.prepareStatement("UPDATE issue SET return_date = DATE_ADD(issue_date, INTERVAL 14 DAY) WHERE student_id = ? AND book_id = ? ;");
+			    upd.setString(1,student_id);
+	            upd.setString(2,book_id);
+	            int result2 = upd.executeUpdate();
+			    RequestDispatcher rd = request.getRequestDispatcher("IssueResult.jsp");
 				rd.forward(request, response);
+				upd.close();
 			}
 		
 		}

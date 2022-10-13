@@ -40,20 +40,17 @@
                 	<form action="IssueServlet" method="POST">
                     	<div class="group">
                         	<label for="student_id" class="label">STUDENT ID</label>
-                        	<input id="student_id" name="student_id" type="number" class="input" onKeyPress="if(this.value.length==5) return false;">
+                        	<input id="student_id" name="student_id" type="number" class="input" onKeyPress="if(this.value.length==5) return false;" required>
                     	</div>
                     	<div class="group">
                         	<label for="book_id" class="label">BOOK ID</label>
-                        	<input id="book_id" name="book_id" type="number" class="input" onKeyPress="if(this.value.length==6) return false;">
+                        	<input id="book_id" name="book_id" type="number" class="input" onKeyPress="if(this.value.length==6) return false;" required>
                     	</div>
                    		<div class="group">
                         	<label for="issue_date" class="label">ISSUE DATE</label>
-                        	<input id="issue_date" name="issue_date" type="date" class="input">
+                        	<input id="issue_date" name="issue_date" type="date" class="input" required>
                     	</div>
-                   		<div class="group">
-                        	<label for="return_date" class="label">RETURN DATE</label>
-                        	<input id="return_date" name="return_date" type="date" class="input">
-                    	</div>
+                   		
                     	<div class="group">
                         	<input type="submit" class="button" value="ISSUE NOW!">
                     	</div>
